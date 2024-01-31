@@ -8,7 +8,7 @@
 3. [Optional] Update **SwiftProtobuf** library:
 	* Make sure that the new version of the **SwiftProtobuf** library is compatible with other consumers of a binary artifact (`grpc-swift`, `hedera-sdk-swift`, `SwiftBinanceChain`, `blockchain-sdk-swift`, and so on)
 	* Set a new version in the `./tools/dependencies-version` file
-	* Remove the cocoapods lock file `./swift/Podfile.lock` (which contains a reference to the old version)
+	* Set a new version in the `./swift/Podfile` file
 4. Build C++ and Rust sources by running `./bootstrap.sh` command
 5. Build iOS sources by running `./tools/generate-files ios` command
 6. Navigate to the `.swift` folder
