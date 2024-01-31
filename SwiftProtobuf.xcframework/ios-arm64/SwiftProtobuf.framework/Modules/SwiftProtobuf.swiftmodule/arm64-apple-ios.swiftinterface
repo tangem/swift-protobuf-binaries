@@ -156,6 +156,10 @@ public enum BinaryEncodingError : Swift.Error {
     get
   }
 }
+public struct BinaryEncodingOptions {
+  public var useDeterministicOrdering: Swift.Bool
+  public init()
+}
 public protocol Decoder {
   mutating func handleConflictingOneOf() throws
   mutating func nextFieldNumber() throws -> Swift.Int?
@@ -3008,6 +3012,7 @@ public enum JSONEncodingError : Swift.Error {
 public struct JSONEncodingOptions {
   public var alwaysPrintEnumsAsInts: Swift.Bool
   public var preserveProtoFieldNames: Swift.Bool
+  public var useDeterministicOrdering: Swift.Bool
   public init()
 }
 public protocol Message : Swift.CustomDebugStringConvertible {
@@ -3043,6 +3048,7 @@ extension SwiftProtobuf.Message {
 }
 extension SwiftProtobuf.Message {
   public func serializedData(partial: Swift.Bool = false) throws -> Foundation.Data
+  public func serializedData(partial: Swift.Bool = false, options: SwiftProtobuf.BinaryEncodingOptions) throws -> Foundation.Data
   @inlinable public init(serializedData data: Foundation.Data, extensions: (any SwiftProtobuf.ExtensionMap)? = nil, partial: Swift.Bool = false, options: SwiftProtobuf.BinaryDecodingOptions = BinaryDecodingOptions()) throws {
     self.init()
     try merge(contiguousBytes: data, extensions: extensions, partial: partial, options: options)
