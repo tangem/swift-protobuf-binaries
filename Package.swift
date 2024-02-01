@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftProtobuf",
+    name: "SwiftProtobufBinaries",
     products: [
         .library(
             name: "SwiftProtobuf",
