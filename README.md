@@ -3,6 +3,8 @@
 
 # Building and updating
 
+###Deprecated, all builds are done by CI
+
 1. Clone [Trust Wallet Core fork](https://github.com/tangem/wallet-core)
 2. Install the required dependencies by following [the official guide](https://developer.trustwallet.com/wallet-core/building).
 3. [Optional] Update **SwiftProtobuf** library:
