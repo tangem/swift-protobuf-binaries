@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftProtobuf
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name SwiftProtobuf
 import Dispatch
 import Foundation
 import Swift
@@ -227,12 +226,16 @@ extension SwiftProtobuf.Decoder {
 public enum Google_Protobuf_Edition : SwiftProtobuf.Enum {
   public typealias RawValue = Swift.Int
   case unknown
+  case proto2
+  case proto3
   case edition2023
+  case edition2024
   case edition1TestOnly
   case edition2TestOnly
   case edition99997TestOnly
   case edition99998TestOnly
   case edition99999TestOnly
+  case max
   public init()
   public init?(rawValue: Swift.Int)
   public var rawValue: Swift.Int {
@@ -298,7 +301,7 @@ public struct Google_Protobuf_FileDescriptorProto {
     get
   }
   public mutating func clearSyntax()
-  public var edition: Swift.String {
+  public var edition: SwiftProtobuf.Google_Protobuf_Edition {
     get
     set
   }
@@ -306,14 +309,6 @@ public struct Google_Protobuf_FileDescriptorProto {
     get
   }
   public mutating func clearEdition()
-  public var editionEnum: SwiftProtobuf.Google_Protobuf_Edition {
-    get
-    set
-  }
-  public var hasEditionEnum: Swift.Bool {
-    get
-  }
-  public mutating func clearEditionEnum()
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
@@ -619,8 +614,8 @@ public struct Google_Protobuf_FieldDescriptorProto {
   public enum Label : SwiftProtobuf.Enum {
     public typealias RawValue = Swift.Int
     case optional
-    case required
     case repeated
+    case required
     public init()
     public init?(rawValue: Swift.Int)
     public var rawValue: Swift.Int {
@@ -886,14 +881,6 @@ public struct Google_Protobuf_FileOptions : SwiftProtobuf.ExtensibleMessage {
     get
   }
   public mutating func clearPyGenericServices()
-  public var phpGenericServices: Swift.Bool {
-    get
-    set
-  }
-  public var hasPhpGenericServices: Swift.Bool {
-    get
-  }
-  public mutating func clearPhpGenericServices()
   public var deprecated: Swift.Bool {
     get
     set
@@ -1199,7 +1186,7 @@ public struct Google_Protobuf_FieldOptions : SwiftProtobuf.ExtensibleMessage {
     }
   }
   public struct EditionDefault {
-    public var edition: Swift.String {
+    public var edition: SwiftProtobuf.Google_Protobuf_Edition {
       get
       set
     }
@@ -1207,14 +1194,6 @@ public struct Google_Protobuf_FieldOptions : SwiftProtobuf.ExtensibleMessage {
       get
     }
     public mutating func clearEdition()
-    public var editionEnum: SwiftProtobuf.Google_Protobuf_Edition {
-      get
-      set
-    }
-    public var hasEditionEnum: Swift.Bool {
-      get
-    }
-    public mutating func clearEditionEnum()
     public var value: Swift.String {
       get
       set
@@ -1502,6 +1481,14 @@ public struct Google_Protobuf_FeatureSet : SwiftProtobuf.ExtensibleMessage {
     get
   }
   public mutating func clearRepeatedFieldEncoding()
+  public var utf8Validation: SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation {
+    get
+    set
+  }
+  public var hasUtf8Validation: Swift.Bool {
+    get
+  }
+  public mutating func clearUtf8Validation()
   public var messageEncoding: SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding {
     get
     set
@@ -1553,6 +1540,17 @@ public struct Google_Protobuf_FeatureSet : SwiftProtobuf.ExtensibleMessage {
       get
     }
   }
+  public enum Utf8Validation : SwiftProtobuf.Enum {
+    public typealias RawValue = Swift.Int
+    case unknown
+    case verify
+    case none
+    public init()
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
   public enum MessageEncoding : SwiftProtobuf.Enum {
     public typealias RawValue = Swift.Int
     case unknown
@@ -1596,6 +1594,12 @@ extension SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding : Swift
     get
   }
 }
+extension SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation : Swift.CaseIterable {
+  public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation]
+  public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation] {
+    get
+  }
+}
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding]
   public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding] {
@@ -1610,7 +1614,7 @@ extension SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat : Swift.CaseIterab
 }
 public struct Google_Protobuf_FeatureSetDefaults {
   public var defaults: [SwiftProtobuf.Google_Protobuf_FeatureSetDefaults.FeatureSetEditionDefault]
-  public var minimumEdition: Swift.String {
+  public var minimumEdition: SwiftProtobuf.Google_Protobuf_Edition {
     get
     set
   }
@@ -1618,7 +1622,7 @@ public struct Google_Protobuf_FeatureSetDefaults {
     get
   }
   public mutating func clearMinimumEdition()
-  public var maximumEdition: Swift.String {
+  public var maximumEdition: SwiftProtobuf.Google_Protobuf_Edition {
     get
     set
   }
@@ -1626,25 +1630,9 @@ public struct Google_Protobuf_FeatureSetDefaults {
     get
   }
   public mutating func clearMaximumEdition()
-  public var minimumEditionEnum: SwiftProtobuf.Google_Protobuf_Edition {
-    get
-    set
-  }
-  public var hasMinimumEditionEnum: Swift.Bool {
-    get
-  }
-  public mutating func clearMinimumEditionEnum()
-  public var maximumEditionEnum: SwiftProtobuf.Google_Protobuf_Edition {
-    get
-    set
-  }
-  public var hasMaximumEditionEnum: Swift.Bool {
-    get
-  }
-  public mutating func clearMaximumEditionEnum()
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public struct FeatureSetEditionDefault {
-    public var edition: Swift.String {
+    public var edition: SwiftProtobuf.Google_Protobuf_Edition {
       get
       set
     }
@@ -1652,14 +1640,6 @@ public struct Google_Protobuf_FeatureSetDefaults {
       get
     }
     public mutating func clearEdition()
-    public var editionEnum: SwiftProtobuf.Google_Protobuf_Edition {
-      get
-      set
-    }
-    public var hasEditionEnum: Swift.Bool {
-      get
-    }
-    public mutating func clearEditionEnum()
     public var features: SwiftProtobuf.Google_Protobuf_FeatureSet {
       get
       set
@@ -1837,6 +1817,8 @@ extension SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence : @unchecked Sw
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType : @unchecked Swift.Sendable {
 }
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding : @unchecked Swift.Sendable {
+}
+extension SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation : @unchecked Swift.Sendable {
 }
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding : @unchecked Swift.Sendable {
 }
@@ -2219,6 +2201,9 @@ extension SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType : SwiftProtobuf._Pro
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
 }
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
 }
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding : SwiftProtobuf._ProtoNameProviding {
@@ -3115,6 +3100,8 @@ public struct _NameMap : Swift.ExpressibleByDictionaryLiteral {
   public init(dictionaryLiteral elements: (Swift.Int, SwiftProtobuf._NameMap.NameDescription)...)
   public typealias Key = Swift.Int
   public typealias Value = SwiftProtobuf._NameMap.NameDescription
+}
+extension SwiftProtobuf._NameMap : Swift.Sendable {
 }
 public protocol ProtobufAPIVersion_2 {
 }
