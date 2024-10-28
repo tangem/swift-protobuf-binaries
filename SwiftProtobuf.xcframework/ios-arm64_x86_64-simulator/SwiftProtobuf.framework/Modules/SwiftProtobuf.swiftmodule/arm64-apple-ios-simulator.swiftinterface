@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
 // swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name SwiftProtobuf
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Dispatch
 import Foundation
 import Swift
@@ -240,7 +241,7 @@ public enum Google_Protobuf_Edition : SwiftProtobuf.Enum {
 }
 extension SwiftProtobuf.Google_Protobuf_Edition : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_Edition]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_Edition] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_Edition] {
     get
   }
 }
@@ -495,7 +496,7 @@ public struct Google_Protobuf_ExtensionRangeOptions : SwiftProtobuf.ExtensibleMe
 }
 extension SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState] {
     get
   }
 }
@@ -630,13 +631,13 @@ public struct Google_Protobuf_FieldDescriptorProto {
 }
 extension SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum] {
     get
   }
 }
 extension SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label] {
     get
   }
 }
@@ -994,7 +995,7 @@ public struct Google_Protobuf_FileOptions : SwiftProtobuf.ExtensibleMessage {
 }
 extension SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode] {
     get
   }
 }
@@ -1230,25 +1231,25 @@ public struct Google_Protobuf_FieldOptions : SwiftProtobuf.ExtensibleMessage {
 }
 extension SwiftProtobuf.Google_Protobuf_FieldOptions.CType : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.CType]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.CType] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.CType] {
     get
   }
 }
 extension SwiftProtobuf.Google_Protobuf_FieldOptions.JSType : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.JSType]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.JSType] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.JSType] {
     get
   }
 }
 extension SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention] {
     get
   }
 }
 extension SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType] {
     get
   }
 }
@@ -1399,7 +1400,7 @@ public struct Google_Protobuf_MethodOptions : SwiftProtobuf.ExtensibleMessage {
 }
 extension SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel] {
     get
   }
 }
@@ -1579,31 +1580,31 @@ public struct Google_Protobuf_FeatureSet : SwiftProtobuf.ExtensibleMessage {
 }
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence] {
     get
   }
 }
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType] {
     get
   }
 }
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding] {
     get
   }
 }
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding] {
     get
   }
 }
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat] {
     get
   }
 }
@@ -1755,7 +1756,7 @@ public struct Google_Protobuf_GeneratedCodeInfo {
 }
 extension SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic : Swift.CaseIterable {
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic]
-  public static var allCases: [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic] {
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic] {
     get
   }
 }
